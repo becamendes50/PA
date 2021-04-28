@@ -1,8 +1,11 @@
-{ "third": "Goodbye"
-"fifth": 1234
-"fourth": false
-"first": { }
-"second": [ "Hello"
-true
+{ 
+	"third": "Goodbye", 
+	"fifth": 1234, 
+	"fourth": false, 
+	"first": { 
+	}, 
+	"second": [ 
+	"Hello", 
+	true
 ]
 }
