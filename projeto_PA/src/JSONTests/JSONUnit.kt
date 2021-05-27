@@ -66,9 +66,9 @@ class JSONUnit {
     @Test
     fun testSerialize() {
         val jsonCentral = JSONCentral()
-        jsonCentral.serializeJSONTest(testValues1())
+        jsonCentral.serializeJSONText(testValues1())
         val expected = "{ \n\t\"third\": \"Goodbye\", \n\t\"fifth\": 1234, \n\t\"fourth\": false, \n\t\"first\": { \n\t}, \n\t\"second\": [ \n\t\"Hello\", \n\ttrue\n]\n}"
-        assertEquals(expected, jsonCentral.serializeJSONTest(testValues1()))
+        assertEquals(expected, jsonCentral.serializeJSONText(testValues1()))
     }
 
     @Test
@@ -80,9 +80,7 @@ class JSONUnit {
         val test3 = arrayListOf<Any>()
         val dataClass = TestDataClass(test1, test2, test3)
         val dataConverted = jsonConverter.converterManager(dataClass)
-        assertEquals(jsonCentral.serializeJSONTest(testValues2()), jsonCentral.serializeJSONTest(dataConverted))
-
-
+        assertEquals(jsonCentral.serializeJSONText(testValues2()), jsonCentral.serializeJSONText(dataConverted))
     }
 
 

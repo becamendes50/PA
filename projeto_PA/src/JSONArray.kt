@@ -16,4 +16,7 @@ class JSONArray (private val array: MutableList<JSONValue>) : JSONValue() {
         visitor.visit(this)
     }
 
+    override fun setValue(value :Any) {
+    }
+
 }

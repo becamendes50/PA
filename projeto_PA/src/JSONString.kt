@@ -1,4 +1,4 @@
-class JSONString (private val string: String) : JSONValue()  {
+class JSONString (private var string: String) : JSONValue()  {
 
     override fun accept(visitor: JSONVisitor) {
         visitor.visit(this)
@@ -6,6 +6,10 @@ class JSONString (private val string: String) : JSONValue()  {
 
     fun getString() :String{
         return string
+    }
+
+    override fun setValue(value :Any) {
+        string = value as String
     }
 
 }

@@ -39,14 +39,14 @@ class JSONCentral {
     }
 
     fun serializeJSON(obj: JSONValue) {
-        val file = File("root4")
+        val file = File(obj.toString())
         val serializer = JSONSerializer(file)
         obj.accept(serializer)
         serializer.getWriter().close()
     }
 
-    fun serializeJSONTest(obj: JSONValue) : String{
-        val file = File("root4")
+    fun serializeJSONText(obj: JSONValue) : String{
+        val file = File("root")
         val serializer = JSONSerializer(file)
         obj.accept(serializer)
         serializer.getWriter().close()
@@ -79,14 +79,12 @@ fun main() {
     /*val map1: MutableMap<String, String> = mutableMapOf()
     map1.put("bye1", "one")
     map1.put("bye2", "two")
-    map1.put("bye3", "three")*/
+    map1.put("bye3", "three")
+    jsonCentral.serializeJSON(jsonCentral.convertJSON(setOf("hello", 12, true, map1)))*/
 
-    //jsonCentral.serializeJSON(jsonCentral.convertJSON(setOf("hello", 12, true, map1)))
-
-    /*val array1: ArrayList<String> = arrayListOf()
+    /*val array1: ArrayList<Any> = arrayListOf()
     array1.add("bye1")
     array1.add("bye2")
-
     val conv = JSONConverter()
     val dataClass1 = TestDataClass("Hi", 14, array1)
     jsonCentral.serializeJSON(conv.converterManager(dataClass1))*/

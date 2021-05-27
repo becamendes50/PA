@@ -16,4 +16,7 @@ class JSONObject(private val objectMap: MutableMap<String, JSONValue>) : JSONVal
         visitor.visit(this)
     }
 
+    override fun setValue(value :Any) {
+    }
+
 }
